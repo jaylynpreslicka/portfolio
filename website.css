@@ -1,13 +1,16 @@
-<html>
-<head>
-<title> Jaylyn Preslicka</title>
-<link href="website.css" rel="stylesheet">
-</head>
-<body>
+/* LA Times inspired theme */
 
+:root {
+    --latimes-black: #000000;
+    --latimes-ink: #1c1c1c;
+    --latimes-gray: #f5f5f0;
+    --latimes-border: #d8d8d0;
+    --latimes-gold: #f5d04c;
+    --latimes-serif: 'Lora', 'Georgia', serif;
+    --latimes-display: 'Playfair Display', 'Times New Roman', serif;
+    --latimes-sans: 'Helvetica Neue', Arial, sans-serif;
+}
 
-
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,396 +18,657 @@
 }
 
 body {
-    font-family: 'Times New Roman', 'Times New Roman', serif;
+    font-family: var(--latimes-serif);
+    background-color: var(--latimes-gray);
+    color: var(--latimes-ink);
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
 }
 
-/* Header and Navigation */
-header {
-    background-color: #3d5c5c;
-    color: white;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+img {
+    max-width: 100%;
+    display: block;
 }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+a {
+    color: var(--latimes-black);
     text-decoration: none;
-    color: white;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.nav-links a:hover {
-    color: #ff6b35;
-}
-
-/* Main content container */
-main {
-    margin-top: 80px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 2rem;
-}
-
-/* Section styling */
-section {
-    margin: 4rem 0;
-    padding: 2rem 0;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #3d5c5c;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #3d5c5c;
-    border-bottom: 3px solid #ff6b35;
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-/* Hero section */
-.hero {
-    background: linear-gradient(135deg, #94b8b8 0%, #334d4d 100%);
-    color: white;
-    text-align: center;
-    padding: 6rem 2rem 4rem;
-    margin: 0 -2rem 4rem -2rem;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #ff6b35;
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #e55a2b;
-}
-
-/* About section */
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 3rem;
-    align-items: start;
-}
-
-.about-image-wrapper {
-    text-align: center;
-}
-
-.profile-image,
-.avatar {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ff6b35;
-}
-
-/* Projects grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.project-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background-color: #f0f0f0;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
-}
-
-.project-description {
-    color: #666;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-}
-
-.project-link {
-    color: #ff6b35;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project-link:hover {
+a:hover {
     text-decoration: underline;
 }
 
-/* Resume section */
-.resume-download {
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--latimes-black);
+    padding: 1.5rem 0 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.masthead {
     text-align: center;
-    margin: 2rem 0;
+    margin-bottom: 0.75rem;
 }
 
-.download-btn {
-    display: inline-block;
-    background-color: #1a1a1a;
-    color: white;
-    padding: 1rem 2rem;
+.masthead-city {
+    font-size: 0.75rem;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    color: var(--latimes-ink);
+    display: block;
+}
+
+.masthead-title {
+    font-family: var(--latimes-display);
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin: 0.25rem 0;
+}
+
+.masthead-tagline {
+    font-size: 0.9rem;
+    font-family: var(--latimes-sans);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.primary-nav {
+    border-top: 1px solid var(--latimes-border);
+    border-bottom: 3px double var(--latimes-black);
+    padding: 0.6rem 0;
+}
+
+.primary-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    flex-wrap: wrap;
+}
+
+.primary-nav a {
+    font-family: var(--latimes-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    color: var(--latimes-ink);
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus {
+    color: var(--latimes-black);
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-bottom: 2px solid var(--latimes-black);
 }
 
-.download-btn:hover {
-    background-color: #333;
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2.5rem);
 }
 
-.resume-preview {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 10px;
-    margin-top: 2rem;
+.feature-article {
+    background-color: #ffffff;
+    border: 1px solid var(--latimes-border);
+    border-radius: 2px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.resume-section {
+.feature-image {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1525295692797-3d70f72e9f93?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    min-height: 320px;
+}
+
+.feature-content {
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.feature-kicker {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--latimes-gold);
+    margin-bottom: 1rem;
+}
+
+.feature-headline {
+    font-family: var(--latimes-display);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.feature-dek {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.feature-meta {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
     margin-bottom: 2rem;
+}
+
+.feature-cta {
+    display: inline-block;
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.75rem;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--latimes-black);
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+.feature-cta:hover {
+    background-color: var(--latimes-black);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.section-label {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.latest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.story-card {
+    background-color: #ffffff;
+    border-top: 5px solid var(--latimes-black);
+    border-bottom: 1px solid var(--latimes-border);
+    padding: 1.75rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.story-kicker {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.7rem;
+    color: #a07a11;
+}
+
+.story-headline {
+    font-family: var(--latimes-display);
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.story-summary {
+    font-size: 0.98rem;
+    color: #555;
+}
+
+.story-link {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-size: 0.7rem;
+    margin-top: auto;
+}
+
+.see-more-container {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--latimes-border);
+}
+
+.see-more-link {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--latimes-ink);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.see-more-link:hover {
+    color: var(--latimes-black);
+    text-decoration: underline;
+}
+
+.profile-section {
+    background-color: #ffffff;
+    border: 1px solid var(--latimes-border);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.profile-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: start;
+}
+
+.profile-image-wrapper {
+    text-align: center;
+}
+
+.profile-image {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--latimes-black);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-bio p {
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.resume-columns {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 2.5rem;
+}
+
+.resume-block h3 {
+    font-family: var(--latimes-display);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-top: 4px solid var(--latimes-black);
+    padding-top: 0.75rem;
 }
 
 .resume-item {
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--latimes-border);
+    padding-bottom: 1.2rem;
 }
 
 .resume-item:last-child {
     border-bottom: none;
 }
 
-.job-title {
-    font-weight: bold;
-    color: #1a1a1a;
+.resume-title {
+    font-family: var(--latimes-display);
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
 }
 
-.company-date {
+.resume-meta {
+    font-size: 0.9rem;
     color: #666;
     font-style: italic;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
-/* Contact form */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
+.resume-item p {
+    font-size: 0.95rem;
+    color: #444;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.resume-image {
+    margin-top: 2.5rem;
+    border: 1px solid var(--latimes-border);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #333;
+.contact-section {
+    background-color: #ffffff;
+    border: 1px solid var(--latimes-border);
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3.5rem;
 }
 
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: #ff6b35;
-}
-
-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background-color: #ff6b35;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-    background-color: #e55a2b;
-}
-
-.contact-info {
+.contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .contact-item {
-    text-align: center;
     padding: 1.5rem;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    border: 1px solid var(--latimes-border);
+    text-align: center;
+    background-color: #fafafa;
 }
 
 .contact-icon {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #ff6b35;
 }
 
-/* Footer */
+.contact-item h3 {
+    font-family: var(--latimes-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.form-field label {
+    display: block;
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    border: 1px solid var(--latimes-border);
+    padding: 0.85rem 1rem;
+    font-family: var(--latimes-serif);
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.form-field textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.submit-btn {
+    justify-self: start;
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.75rem;
+    padding: 0.9rem 2.2rem;
+    background-color: var(--latimes-black);
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--latimes-ink);
+}
+
 footer {
-    background-color: #1a1a1a;
-    color: white;
+    background-color: var(--latimes-black);
+    color: #ffffff;
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
 }
 
-.social-links {
+.footer-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ffffff;
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.7rem;
+}
+
+.footer-links a:hover {
+    color: var(--latimes-gold);
+}
+
+/* Resume PDF Embed */
+.resume-pdf-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--latimes-border);
+}
+
+.resume-pdf-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 678px;
+    background: var(--latimes-gray);
+    border: 1px solid var(--latimes-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.resume-pdf-wrapper object,
+.resume-pdf-wrapper iframe {
+    width: 100%;
+    height: 678px;
+    border: none;
+    display: block;
+}
+
+.resume-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .masthead-title {
+        letter-spacing: 0.1rem;
+    }
+
+    .primary-nav ul {
+        gap: 1rem;
+    }
+
+    .feature-article {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image {
+        min-height: 220px;
+    }
+
+    .resume-pdf-wrapper {
+        min-height: 500px;
+    }
+
+    .resume-pdf-wrapper object,
+    .resume-pdf-wrapper iframe {
+        height: 500px;
+    }
+}
+
+/* Archives Page Styles */
+.archives-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 100px;
+}
+
+.archives-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--latimes-border);
+}
+
+.archives-header h2 {
+    font-family: var(--latimes-display);
+    font-size: 2.5rem;
+    color: var(--latimes-black);
     margin-bottom: 1rem;
 }
 
-.social-links a {
-    color: white;
+.archives-intro {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.archives-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--latimes-border);
+    color: var(--latimes-ink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--latimes-black);
+    color: #ffffff;
+    border-color: var(--latimes-black);
+}
+
+.archives-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    margin-bottom: 3rem;
+}
+
+.archive-item {
+    background: #ffffff;
+    border: 1px solid var(--latimes-border);
+    border-top: 5px solid var(--latimes-black);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.archive-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.archive-date {
+    font-family: var(--latimes-sans);
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.archive-kicker {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.7rem;
+    color: #a07a11;
+    margin: 0;
+}
+
+.archive-headline {
+    font-family: var(--latimes-display);
+    font-size: 1.35rem;
+    line-height: 1.3;
+    margin: 0;
+    color: var(--latimes-black);
+}
+
+.archive-summary {
+    font-size: 0.98rem;
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.archive-link {
+    font-family: var(--latimes-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-size: 0.7rem;
+    color: var(--latimes-ink);
     text-decoration: none;
-    font-size: 1.2rem;
+    margin-top: 0.5rem;
     transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    color: #ff6b35;
+.archive-link:hover {
+    color: var(--latimes-black);
+    text-decoration: underline;
 }
 
-/* Responsive design */
+.back-to-home {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--latimes-border);
+}
+
+.primary-nav a.active {
+    color: var(--latimes-gold);
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .projects-grid {
+    .archives-grid {
         grid-template-columns: 1fr;
     }
 
-    h1 {
+    .archives-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        font-size: 0.65rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .archives-header h2 {
         font-size: 2rem;
     }
-
-    h2 {
-        font-size: 1.5rem;
-    }
 }
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-<body> 
