@@ -233,13 +233,6 @@ main {
     margin-top: auto;
 }
 
-.see-more-container {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--latimes-border);
-}
-
 .see-more-link {
     font-family: var(--latimes-sans);
     text-transform: uppercase;
@@ -248,13 +241,34 @@ main {
     color: var(--latimes-ink);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.7rem;
+    border: 1px solid var(--latimes-border);
+    border-radius: 999px;
+    transition: all 0.3s ease;
 }
 
 .see-more-link:hover {
-    color: var(--latimes-black);
-    text-decoration: underline;
+    color: #ffffff;
+    background: var(--latimes-black);
+    border-color: var(--latimes-black);
+    text-decoration: none;
+}
+
+.see-more-card {
+    background: #f7f7f2;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.see-more-card .story-summary {
+    color: #444;
+}
+
+.see-more-card .see-more-link {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .profile-section {
@@ -647,6 +661,10 @@ footer {
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid var(--latimes-border);
+}
+
+.back-to-home .see-more-link {
+    justify-content: center;
 }
 
 .primary-nav a.active {
